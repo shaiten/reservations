@@ -10,11 +10,18 @@
     <div class="container" id="body-head">
         <form id="login">
             <h3>login</h3>
-            <label for="Uname">username:</label><br>
-            <input type="text" id="Uname" name="Uname"><br>
-            <label for="password">password:</label><br>
-            <input type="text" id="password" name="pass"> <br>
-            <button id="login-submit">submit</button>
+            <div>
+                <label for="Uname">username:</label><br>
+                <input type="text" id="Uname" name="Uname"><br>    
+            </div>
+            <div>
+                <label for="password">password:</label><br>
+                <input type="text" id="password" name="pass"> <br>    
+            </div>
+            <div>
+                <button id="login-submit" onclick="storeLoginInfo()" >submit</button>    
+            </div>
+            
         </form>
     </div>
 
