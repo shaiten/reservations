@@ -1,2 +1,5 @@
-# reservations
-cosc 4351 reservation system
+
+to run local
+`npm run dev` (requires npx to be installed)
+
+

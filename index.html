@@ -1,33 +1,57 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Reservation project</title>
-    <link rel="stylesheet" type="text/css" href="lib/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="lib/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="container" id="body-head">
-        <form id="login">
-            <h3>login</h3>
-            <div>
-                <label for="Uname">username:</label><br>
-                <input type="text" id="Uname" name="Uname"><br>    
+    <div class='container'>
+        <div class='section'>
+            <h1>test</h1>
+        </div>
+        <div class='section'>
+            <form id='signUp'>
+                <h3>Sign Up</h3>
+                <label>Email</label><input type='email' name='email' />
+                <label>Password</label><input type='password' name='password' />
+                <input type='submit'>
+            </form>
+        </div>
+        <div class='section'>
+            <form id='logIn'>
+                <h3>Log In</h3>
+                <label>Email</label><input type='email' name='email' />
+                <label>Password</label><input type='password' name='password' id='logPass'/>
+                <input type='submit'>
+            </form>
+        </div>
+        
+        <div id="validation">
+            <div class='section'>
+                <form id='validate'>
+                    <h3>Access Token</h3>
+                    <input readonly=readonly type='text' id='access-token' /> <small>Default expiry is 60 minutes</small>
+                    <h3>Refresh Token</h3>
+                    <input readonly=readonly type='text' id='refresh-token' /> <small>Supabase-js automatically fetch a new accessToken every 60 mins whilst the client is running</small> 
+                </form>
             </div>
-            <div>
-                <label for="password">password:</label><br>
-                <input type="text" id="password" name="pass"> <br>    
+    
+    
+            <div class='section'>
+                <h3>Fetch User Details</h3>
+                <button id='user-button'>Fetch</button>
             </div>
-            <div>
-                <button id="login-submit" onclick="storeLoginInfo()" >submit</button>    
-            </div>
-            
-        </form>
+        </div>
+       
+        <div class='section'>
+            <h3>Logout</h3>
+            <button id='logout-button'>Logout</button>
+        </div>
     </div>
-
-    <footer>
-
-    </footer>
-    <script src="lib/js/main.js"></script>
 </body>
+
 </html>
