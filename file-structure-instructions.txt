@@ -1,4 +1,0 @@
-lib folder will hold any liberies or extensions we use.
-lib folder will hold any picture backgrounds etc
-
-index.html is the homepage/landing page
