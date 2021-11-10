@@ -80,11 +80,11 @@ for example: someone requests 8 guests and table for 8 is not available but 2 + 
 or 4+4 is available. System should combine the tables and notify owner they need to 
 combine tables. In this case System reserves both tables. -->
 
+<!-- removed required for fields because i am working on parts -->
 <div class="container" id="reservationContainer">
   <form id="reservation">
      <h1 id="reservationTitle">Reservations</h1>
      <p>there is a 10$ fee for weekend and holidays reservations</p>
-     <div id="test"></div>
      <div class="field">
         <label class="label" for="name">Name</label>
         <div class="control">
@@ -118,8 +118,10 @@ combine tables. In this case System reserves both tables. -->
      <div class="field">
         <label class="label" for="numGuests">Number of Guests</label>
         <div class="control">
-           <input  class="input" type="number" placeholder=" #guests" name="numGuests" min="1" max="20"/>
+           <input  class="input" id="numGuest" type="number" onchange="tables()" placeholder=" #guests" name="numGuests" min="1" max="20"/>
         </div>
+        <div id="tableRes"></div>
+        <div id="test"></div>
      </div>
      <br>
      <br>
