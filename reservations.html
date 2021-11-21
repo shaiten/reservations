@@ -12,60 +12,13 @@
    <!-- //////////////////////////////////////////////////////////////////////////////////
     start nav -->
 
-   <nav class="navbar navbar-light bg-light justify-content-between">
+    <nav class="navbar navbar-light bg-light justify-content-between">
       <div class="container">
-         <a class="navbar-brand">RESERVATIONS</a>
-         <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
-            data-bs-target="#authModal">
-            sign in
-         </button>
+          <a class="navbar-brand">RESERVATIONS</a>
+          <button id='logout-button'>Logout</button>
       </div>
-   </nav>
-   <!-- sign in form -->
-   <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authTitle" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="authTitle">Log in</h5>
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-               <form id='logIn'>
-                  <label>Email</label><input type='email' name='email' />
-                  <div class="clearfix"></div>
-                  <label>Password</label><input type='password' name='password' id='logPass' />
-                  <div class="clearfix"></div>
-                  <button class="button is-primary" id="signInButt" type="submit">Log In</button>
-                  <div class="clearfix"></div>
-                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signUpModal">
-                     sign up
-                  </button>
-               </form>
-            </div>
-         </div>
-      </div>
-   </div>
+  </nav>
 
-   <!-- sign up modal -->
-   <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpTitle" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="signUpTitle">sign up</h5>
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-               <form id='signUp'>
-                  <label>Email</label><input type='email' name='email' />
-                  <div class="clearfix"></div>
-                  <label>Password</label><input type='password' name='password' id='logPass' />
-                  <div class="clearfix"></div>
-                  <button class="button is-primary" type="submit">submit</button>
-               </form>
-            </div>
-         </div>
-      </div>
-   </div>
 
    <!-- //////////////////////////////////////////////////////////////////////////////////////////////
 end nav -->
@@ -80,10 +33,14 @@ combine tables. In this case System reserves both tables. -->
    <div class="container" id="reservationContainer">
       <form id="reservation">
          <h1 id="reservationTitle">Reservations</h1>
+         <div>
+            <p id="greeting"></p>
+            <p>there is a 10$ fee for weekend and holidays reservations</p>
+         </div>
          <div class="field">
             <label class="label" for="name">Name</label>
             <div class="control">
-               <input required class="input" type="text" placeholder="Your name" name="name" />
+               <input  id="formName" class="input" type="text" placeholder="Your name" name="name" />
             </div>
          </div>
          <div class="field">
@@ -95,13 +52,13 @@ combine tables. In this case System reserves both tables. -->
          <div class="field">
             <label class="label" for="eMail">E-Mail</label>
             <div class="control">
-               <input required class="input" type="text" placeholder="E-Mail" name="eMail" />
+               <input id="formMail" class="input" type="text" placeholder="E-Mail" name="eMail" />
             </div>
          </div>
-         <div class="field">
+         <div class="field" id="dateField">
             <label class="label" for="date">Date</label>
             <div class="control">
-               <input required class="input" type="date" placeholder="Reservation date" name="date" />
+               <input required id="inputDate" class="input" type="date" onchange="checkDay()" placeholder="Reservation date" name="date" />
             </div>
          </div>
          <div class="field">
@@ -111,10 +68,11 @@ combine tables. In this case System reserves both tables. -->
             </div>
          </div>
          <div class="field">
-            <label class="label" for="numGuests">Number of Guests</label>
+            <label class="label" for="numGuests">Number of Guests (max 20)</label>
             <div class="control">
-               <input required class="input" type="number" placeholder="Number of guests" name="numGuests" />
+               <input  class="input" id="numGuest" type="number" onchange="tables()" placeholder=" #guests" name="numGuests" min="1" max="20"/>
             </div>
+            <div id="tableRes"></div>
          </div>
          <br>
          <br>
