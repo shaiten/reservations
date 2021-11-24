@@ -4,7 +4,10 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:thistle;
+  background-image: url(../../rsc/background/res3.jpg);
+  background-size:     cover;                  
+  background-repeat:   no-repeat;
+  background-position: center center; 
 }
 
 label {
@@ -20,5 +23,14 @@ label {
 }
 
 #reservationContainer {
-  background-color: tomato;
+ background-color: white;
+ border: solid silver 1px;
+ opacity: 0.9;
 }
+
+#profileContainer {
+  background-color: white;
+  border: solid silver 1px;
+  opacity: 0.9;
+ }
+ 
