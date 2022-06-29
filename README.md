@@ -1,2 +1,2 @@
 
-1. simple responsive reservation website writeen in html/js with supabase as backend
+1. simple responsive reservation website using html/js with supabase as backend
